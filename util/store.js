@@ -81,7 +81,6 @@ function _dualBind (prop, localName) {
 
 function _bind (prop, localName) {
   const { module, key } = _extract(prop)
-
   return {
     [localName || key] () {
       return module ? this.$store.state[module][key] : this.$store.state[key]

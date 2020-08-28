@@ -89,11 +89,12 @@ export default {
     onResize () {
       if (this.uniforms) this.uniforms.resolution = new Uniform(new Vector2(window.innerWidth, window.innerHeight))
       this.renderer.setSize(window.innerWidth, window.innerHeight)
+      this.renderer.setPixelRatio(window.devicePixelRatio)
     },
 
-    tick () {
+    tick (now) {
       this.uniforms.yOffset.value = this.yOffset / 3
-      this.uniforms.time.value = window.performance.now() / 1000
+      this.uniforms.time.value = now / 1000
       this.renderer.render(this.scene, this.camera)
     }
   }
