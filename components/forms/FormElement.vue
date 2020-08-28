@@ -1,0 +1,28 @@
+<template lang="pug">
+.form-element
+  label(v-if="label") {{ label }}
+  slot
+  p(v-if="caption") {{ caption }}
+</template>
+
+<script>
+export default {
+  props: {
+    label: {
+      type: String,
+      default: null
+    },
+
+    caption: {
+      type: String,
+      default: null
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+label {
+  @include label;
+}
+</style>

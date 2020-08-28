@@ -1,0 +1,14 @@
+{
+  "name": "@zach.winter/vue-common",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zachwinter/vue-common.git"
+  },
+  "author": "Zach Winter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zachwinter/vue-common/issues"
+  },
+  "homepage": "https://github.com/zachwinter/vue-common#readme"
+}
