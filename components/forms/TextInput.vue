@@ -1,10 +1,10 @@
 <template lang="pug">
 FormElement(:label="label" :caption="caption")
   input(
+    ref="input"
     :type="password ? 'password' : 'text'" 
     :value="value" 
     :placeholder="placeholder" 
-    :autofocus="autofocus"
     :name="name"
     @input="$emit('input', $event.target.value)"
   )
@@ -23,6 +23,11 @@ export default {
     password: {
       type: Boolean,
       default: false
+    }
+  },
+  mounted () {
+    if (this.autofocus) {
+      this.$refs.input.focus()
     }
   }
 }
