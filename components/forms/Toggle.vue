@@ -37,8 +37,7 @@ export default {
 <style lang="scss">
 .toggle {
   @include flex(center, flex-start, row);
-  height: $form-control-height;
-
+  
   &.disabled { opacity: .5; }
 
   label {
