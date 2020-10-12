@@ -30,9 +30,13 @@ export default {
 
 <style lang="scss" scoped>
 .form-element {
+  height: $form-control-height;
   min-height: $form-control-height;
 
-  &.short { min-height: $form-control-height / 2; }
+  &.short {
+    height: $form-control-height / 2;
+    min-height: $form-control-height / 2;
+  }
 
   &.flex { @include flex(center, flex-start, row); }
 }
