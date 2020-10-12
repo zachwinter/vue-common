@@ -1,5 +1,5 @@
 <template lang="pug">
-FormElement(:label="label" :caption="caption" class="toggle" :class="{ disabled }")
+FormElement(:label="label" :caption="caption" class="toggle" :class="{ disabled }" :short="true")
   .pill(@click="click" :class="{ clicked: value }"): i
 </template>
 

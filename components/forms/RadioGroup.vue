@@ -1,5 +1,5 @@
 <template>
-  <FormElement :label="label" :caption="caption">
+  <FormElement :label="label" :caption="caption" :short="true">
     <div class="outer">
       <label v-for="(option, i) in options" :key="i">
         <div class="radio-container">

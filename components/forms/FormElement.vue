@@ -1,5 +1,5 @@
 <template lang="pug">
-.form-element
+.form-element(:class="{ short }")
   label(v-if="label") {{ label }}
   slot
   p(v-if="caption") {{ caption }}
@@ -12,10 +12,13 @@ export default {
       type: String,
       default: null
     },
-
     caption: {
       type: String,
       default: null
+    },
+    short: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -25,6 +28,8 @@ export default {
 .form-element {
   @include flex(center, flex-start, row);
   min-height: $form-control-height;
+
+  &.short { min-height: $form-control-height / 2; }
 }
 
 label {
