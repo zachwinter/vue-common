@@ -1,5 +1,5 @@
 <template lang="pug">
-FormElement(:label="label" :caption="caption")
+FormElement(:label="label" :caption="caption" :flex="true" :short="true")
   input(type="range" :min="min" :max="max" :value="value" :step="step" @input="onInput" :disabled="disabled")
 </template>
 

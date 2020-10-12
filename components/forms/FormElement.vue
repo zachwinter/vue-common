@@ -1,5 +1,5 @@
 <template lang="pug">
-.form-element(:class="{ short }")
+.form-element(:class="{ short, flex }")
   label(v-if="label") {{ label }}
   slot
   p(v-if="caption") {{ caption }}
@@ -19,6 +19,10 @@ export default {
     short: {
       type: Boolean,
       default: false
+    },
+    flex: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -26,10 +30,11 @@ export default {
 
 <style lang="scss" scoped>
 .form-element {
-  @include flex(center, flex-start, row);
   min-height: $form-control-height;
 
   &.short { min-height: $form-control-height / 2; }
+
+  &.flex { @include flex(center, flex-start, row); }
 }
 
 label {
