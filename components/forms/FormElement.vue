@@ -1,7 +1,7 @@
 <template lang="pug">
 .form-element(:class="{ short, flex }")
   label(v-if="label") {{ label }}
-  .slot slot
+  slot
   p(v-if="caption") {{ caption }}
 </template>
 
