@@ -23,6 +23,7 @@ export default {
 
 <style lang="scss" scoped>
 .form-element {
+  @include flex(center, flex-start, row);
   min-height: $form-control-height;
 }
 
