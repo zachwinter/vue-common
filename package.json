@@ -1,6 +1,6 @@
 {
   "name": "@zach.winter/vue-common",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/zachwinter/vue-common.git"

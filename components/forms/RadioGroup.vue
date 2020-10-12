@@ -19,6 +19,11 @@ import mixin from '../../mixins/form-element'
 export default {
   mixins: [mixin],
   components: { FormElement },
+  props: {
+    options: {
+      required: true
+    }
+  },
   methods: {
     onInput (e) {
       this.$emit('input', e.target.value)
