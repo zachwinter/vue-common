@@ -22,6 +22,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.form-element {
+  min-height: $form-control-height;
+}
+
 label {
   @include label;
 }
