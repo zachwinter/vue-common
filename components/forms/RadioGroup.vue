@@ -13,30 +13,11 @@
 </template>
 
 <script>
-import FormElement from '@zach.winter/vue-common/components/forms/FormElement'
+import FormElement from './FormElement'
+import mixin from '../../mixins/form-element'
 
 export default {
-  props: {
-    options: {
-      type: Array,
-      required: true
-    },
-    value: {
-      required: true
-    },
-    label: {
-      type: String,
-      default: null
-    },
-    caption: {
-      type: String,
-      required: false
-    },
-    name: {
-      type: String,
-      default: ''
-    }
-  },
+  mixins: [mixin],
   components: { FormElement },
   methods: {
     onInput (e) {

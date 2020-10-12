@@ -4,7 +4,7 @@ FormElement(:label="label" :caption="caption")
 </template>
 
 <script>
-import FormElement from '@zach.winter/vue-common/components/forms/FormElement'
+import FormElement from './FormElement'
 
 export default {
   props: {
