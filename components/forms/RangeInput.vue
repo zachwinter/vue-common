@@ -37,7 +37,7 @@ export default {
   components: { FormElement } ,
   methods: {
     onInput (e) {
-      this.$emit('input', e.target.value)
+      this.$emit('input', parseFloat(e.target.value))
     }
   }
 }
