@@ -46,6 +46,23 @@ function _bind(prop, localName) { // eslint-disable-line
   };
 }
 
+function _get(prop, localName) { // eslint-disable-line
+  const { module, key } = _extract(prop);
+  return {
+    [localName || key]() {
+      return module ? this.$store.getters[`${module}/${key}`] : this.$store.getters[key];
+    },
+  };
+}
+
+export function get (prop, localName = null) {
+  if (Array.isArray(prop)) {
+    return prop.reduce((acc, p) => ({ ...acc, ..._get(p) }), {});
+  } else {
+    return _get(prop, localName)
+  }
+}
+
 export function composeMutations(state) {
   const mutations = _exposeMutations(state);
   return Object.keys(mutations).reduce((acc, mutation) => {
@@ -56,12 +73,13 @@ export function composeMutations(state) {
   }, {});
 }
 
-export function buildModule({ state, actions }) {
+export function buildModule({ state, actions, getters = null }) {
   return {
     namespaced: true,
     state,
     mutations: composeMutations(state),
     actions,
+    getters
   };
 }
 
