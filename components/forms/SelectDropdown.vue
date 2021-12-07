@@ -25,7 +25,7 @@ export default {
       type: Array,
       default: () => []
     },
-    value: {
+    modelValue: {
       required: true
     },
     label: {
@@ -49,7 +49,7 @@ export default {
   }),
   computed: {
     displayed () {
-      if (this.value) return this.value
+      if (this.modelValue) return this.modelValue
       return this.placeholder
     },
     opacity () {
@@ -57,7 +57,7 @@ export default {
       return 1
     },
     displayedValue () {
-      const match = this.options.find(v => v.name === this.value.name)
+      const match = this.options.find(v => v.name === this.modelValue.name)
       if (match) return match.name
       return this.placeholder
     }
@@ -67,7 +67,7 @@ export default {
       this.open = !this.open 
     },
     select (value) {
-      this.$emit('input', value)
+      this.$emit('update:modelValue', value)
       this.toggle()
     }
   }

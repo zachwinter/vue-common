@@ -2,7 +2,7 @@ import FormElement from '../components/forms/FormElement'
 
 export default {
   props: {
-    value: {
+    modelValue: {
       required: true
     },
     label: {

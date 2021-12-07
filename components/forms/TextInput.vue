@@ -3,10 +3,10 @@ FormElement(:label="label" :caption="caption")
   input(
     ref="input"
     :type="password ? 'password' : 'text'" 
-    :value="value" 
+    :value="modelValue" 
     :placeholder="placeholder" 
     :name="name"
-    @input="$emit('input', $event.target.value)"
+    @input="$emit('update:modelValue', $event.target.value)"
   )
 </template>
 

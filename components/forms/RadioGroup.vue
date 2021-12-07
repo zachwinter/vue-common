@@ -3,7 +3,7 @@
     <div class="outer">
       <label v-for="(option, i) in options" :key="i">
         <div class="radio-container">
-          <input type="radio" @input="onInput" :id="option" :value="option.value" :name="name" :checked="value === option.value" />
+          <input type="radio" @input="onInput" :id="option" :value="option.value" :name="name" :checked="modelValue === option.value" />
           <span />
         </div>
         <span>{{ option.name }}</span>
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     onInput (e) {
-      this.$emit('input', e.target.value)
+      this.$emit('update:modelValue', e.target.value)
     }
   }
 } 

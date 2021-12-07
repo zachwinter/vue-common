@@ -5,7 +5,7 @@ FormElement(:label="label" :caption="caption")
     :placeholder="placeholder" 
     :autofocus="autofocus"
     :name="name"
-    @input="$emit('input', $event.target.value)"
+    @input="$emit('update:modelValue', $event.target.value)"
   )
 </template>
 

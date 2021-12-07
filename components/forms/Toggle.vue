@@ -1,6 +1,6 @@
 <template lang="pug">
 FormElement(:label="label" :caption="caption" class="toggle" :class="{ disabled }" :short="true")
-  .pill(@click="click" :class="{ clicked: value }"): i
+  .pill(@click="click" :class="{ clicked: modelValue }"): i
 </template>
 
 <script>
@@ -8,7 +8,7 @@ import FormElement from '@zach.winter/vue-common/components/forms/FormElement'
 
 export default {
   props: {
-    value: {
+    modelValue: {
       type: Boolean
     },
     label: {
@@ -28,7 +28,7 @@ export default {
   methods: {
     click () {
       if (this.disabled) return
-      this.$emit('input', !this.value)
+      this.$emit('update:modelValue', !this.modelValue)
     }
   }
 }

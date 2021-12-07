@@ -1,43 +1,17 @@
 <template lang="pug">
 FormElement(:label="label" :caption="caption" :flex="true" :short="true")
-  input(type="range" :min="min" :max="max" :value="value" :step="step" @input="onInput" :disabled="disabled")
+  input(type="range" :min="min" :max="max" :value="modelValue" :step="step" @input="onInput" :disabled="disabled")
 </template>
 
 <script>
 import FormElement from './FormElement'
 
 export default {
-  props: {
-    value: {
-      required: true
-    },
-    min: {
-      required: true
-    },
-    max: {
-      required: true
-    },
-    step: {
-      type: Number,
-      default: 1
-    },
-    label: {
-      type: String,
-      default: null
-    },
-    caption: {
-      type: String,
-      default: null
-    },
-    disabled: {
-      type: Boolean,
-      default: false
-    }
-  },
+  props: ['modelValue', 'min', 'max', 'step', 'label', 'caption', 'disabled'],
   components: { FormElement } ,
   methods: {
     onInput (e) {
-      this.$emit('input', parseFloat(e.target.value))
+      this.$emit('update:modelValue', parseFloat(e.target.value))
     }
   }
 }
